@@ -13,18 +13,33 @@ const Header = props => {
           <h3>
             {/*purposfully using <a> instead of <Link> because when hosted on netlify weird bug returns An unexpected error has occurred. only for "/" route */}
             <a className="nav-logo" href="/">
-              Similar<span style={{ color: "#7069fa" }}>Font</span>.io
+              thinksousvide.com
             </a>
           </h3>
           <ul className={"nav-link-list " + (mobileMenu ? "open" : "")}>
             <li className="nav-link">
-              <a href="/">Home</a>
+              <a
+                className={mobileMenu ? "nav-text_black" : "nav-text_white"}
+                href="/"
+              >
+                Home
+              </a>
             </li>
             <li className="nav-link">
-              <Link href="/about">About Us</Link>
+              <Link
+                className={mobileMenu ? "nav-text_black" : "nav-text_white"}
+                href="/about"
+              >
+                About Us
+              </Link>
             </li>
             <li className="nav-link">
-              <Link href="/submit-font">Submit a Font</Link>
+              <Link
+                className={mobileMenu ? "nav-text_black" : "nav-text_white"}
+                href="/submit-font"
+              >
+                Submit a Font
+              </Link>
             </li>
           </ul>
         </nav>
@@ -42,7 +57,14 @@ const Header = props => {
           <div></div>
           <div></div>
         </div>
-        <a href="#" id={mobileMenu ? "overlay" : ""} onClick={toggleMenu}></a>
+        <a
+          href="#"
+          id={mobileMenu ? "overlay" : ""}
+          className="overlay-text"
+          onClick={toggleMenu}
+        >
+          Close
+        </a>
       </div>
     </header>
   )

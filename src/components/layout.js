@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
 import Header from "./Header"
+import backgroundImage from "../images/background.jpg"
 
 const Layout = ({ isHomePage, children }) => {
   const {
@@ -22,7 +23,20 @@ const Layout = ({ isHomePage, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isHomePage}>
       <header className="global-header">
-        {isHomePage ? <Header /> : <Header />}
+        {isHomePage ? (
+          <div className="header-background">
+            <Header />{" "}
+            <div style={{ textAlign: "center", padding: "10vw 0" }}>
+              <h1>sign up for our newsletter</h1>
+              <input type="text" />
+              <button>submit</button>
+            </div>
+          </div>
+        ) : (
+          <div className="header-background">
+            <Header />{" "}
+          </div>
+        )}
       </header>
 
       <main>{children}</main>
