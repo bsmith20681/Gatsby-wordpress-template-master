@@ -10,7 +10,7 @@ const Header = props => {
       <div className="container">
         {/* Actual Menu*/}
         <nav>
-          <h3>
+          <h3 style={{ margin: 0 }}>
             {/*purposfully using <a> instead of <Link> because when hosted on netlify weird bug returns An unexpected error has occurred. only for "/" route */}
             <a className="nav-logo" href="/">
               thinksousvide.com

@@ -29,34 +29,34 @@ const BlogIndex = ({
     <Layout isHomePage>
       <Seo title="All posts" />
 
-      <Bio />
-
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.title
-
-          return (
-            <li key={post.uri}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.uri} itemProp="url">
-                      <span itemProp="headline">{parse(title)}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.date}</small>
-                </header>
-                <section itemProp="description">{parse(post.excerpt)}</section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
-
+      <div className="container" style={{ padding: "4vw 0" }}>
+        <div className="row">
+          {console.log(posts)}
+          {posts.map(post => {
+            return (
+              <div className="col-md-4 col-sm-12 post-card">
+                <Link className="post-card-link" to={post.uri}>
+                  <img
+                    className={"post-card-image"}
+                    src={post.featuredImage.node.sourceUrl}
+                    alt={post.featuredImage.node.altText}
+                  />
+                  <h2 className="post-card-title">{post.title}</h2>
+                  <div className="post-card-excerpt">{parse(post.excerpt)}</div>
+                  <div class="post-card-author">
+                    <img
+                      class="post-card-author_image"
+                      src={post.author.node.avatar.url}
+                      alt="author image"
+                    />
+                    <p class="post-card-author_name">{post.author.node.name}</p>
+                  </div>
+                </Link>
+              </div>
+            )
+          })}
+        </div>
+      </div>
       {previousPagePath && (
         <>
           <Link to={previousPagePath}>Previous page</Link>
@@ -83,6 +83,20 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         excerpt
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
+        author {
+          node {
+            name
+            avatar {
+              url
+            }
+          }
+        }
       }
     }
   }

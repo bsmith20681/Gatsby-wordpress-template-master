@@ -130,6 +130,40 @@ nav {
   background-position: center;
 }
 
+.post-card {
+  padding: 0 1.5rem;
+}
+.post-card-image {
+  margin-bottom: 15px;
+}
+.post-card-link {
+  text-decoration: none;
+}
+.post-card-title {
+  font-size: 1.25rem;
+  color: #102a43;
+  margin-bottom: 10px;
+}
+.post-card-excerpt p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #102a43;
+  margin-bottom: 15px;
+}
+.post-card-author {
+  display: flex;
+  align-items: center;
+}
+.post-card-author_image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+.post-card-author_name {
+  color: #102a43;
+}
+
 html {
   font-family: "Lato", sans-serif;
   -ms-text-size-adjust: 100%;
