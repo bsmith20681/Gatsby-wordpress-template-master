@@ -49,7 +49,7 @@ nav {
 
 /** Overlay for mobile menu **/
 #overlay {
-  position: absolute;
+  position: fixed;
   display: block;
   left: 0;
   top: 0;
@@ -130,6 +130,16 @@ nav {
   background-position: center;
 }
 
+.footer {
+  background-color: black;
+  padding: 5px 0;
+}
+.footer-text {
+  color: #cacaca;
+  text-align: center;
+  margin: 0;
+}
+
 .post-card {
   padding: 0 1.5rem;
 }
@@ -162,6 +172,17 @@ nav {
 }
 .post-card-author_name {
   color: #102a43;
+}
+
+.post {
+  margin-top: 2vw;
+}
+.post-content {
+  padding: 0 4vw;
+}
+
+.bio {
+  padding: 0 4vw;
 }
 
 html {
@@ -1773,6 +1794,10 @@ pre tt:after {
     order: 1;
   }
 }
+.justify-content-center {
+  justify-content: center;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -2103,6 +2128,71 @@ summary {
    */
 [hidden] {
   display: none;
+}
+
+html {
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.25rem;
+}
+
+h4 {
+  font-size: 1.875rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+p,
+li,
+a {
+  font-size: 1.125rem;
+}
+
+@media screen and (min-width: 680px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 860px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 920px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

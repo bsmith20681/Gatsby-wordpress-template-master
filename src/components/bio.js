@@ -26,27 +26,22 @@ const Bio = () => {
   const avatarUrl = author?.avatar?.url
 
   return (
-    <div className="bio">
-      {avatarUrl && (
-        <img
-          alt={author?.firstName || ``}
-          className="bio-avatar"
-          src={avatarUrl}
-        />
-      )}
-      {author?.firstName && (
+    <div className="bio row">
+      <div className="col-md-2">
+        {avatarUrl && (
+          <img
+            alt={author?.firstName || ``}
+            className="bio-avatar"
+            src={avatarUrl}
+          />
+        )}
+      </div>
+      <div className="col-md-10">
         <p>
-          Written by <strong>{author.firstName}</strong>
-          {` `}
+          About the Author
           {author?.description || null}
-          {` `}
-          {author?.twitter && (
-            <a href={`https://twitter.com/${author?.twitter || ``}`}>
-              You should follow them on Twitter
-            </a>
-          )}
         </p>
-      )}
+      </div>
     </div>
   )
 }

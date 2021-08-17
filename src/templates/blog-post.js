@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 
@@ -23,40 +23,42 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
   return (
     <Layout>
-      <Seo title={post.title} description={post.excerpt} />
+      <Seo
+        title={post.acfMetaData.metaTitle}
+        description={post.acfMetaData.metaDescription}
+      />
 
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
+      <article className="post" itemScope itemType="http://schema.org/Article">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-10 ">
+              <header>
+                {featuredImage?.fluid && (
+                  <Image fluid={featuredImage.fluid} alt={featuredImage.alt} />
+                )}
+              </header>
 
-          <p>{post.date}</p>
-
-          {/* if we have a featured image for this post let's display it */}
-          {featuredImage?.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
-          )}
-        </header>
-
-        {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
-        )}
+              <div className="row justify-content-center post-content">
+                <div className="col-md-12">
+                  <h1 itemProp="headline">{parse(post.title)}</h1>
+                  {!!post.content && (
+                    <section itemProp="articleBody">
+                      {parse(post.content)}
+                    </section>
+                  )}
+                  <Bio />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <hr />
 
-        <footer>
-          <Bio />
-        </footer>
+        <footer></footer>
       </article>
 
-      <nav className="blog-post-nav">
+      {/*<nav className="blog-post-nav">
         <ul
           style={{
             display: `flex`,
@@ -82,7 +84,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
             )}
           </li>
         </ul>
-      </nav>
+      </nav>*/}
     </Layout>
   )
 }
@@ -103,6 +105,10 @@ export const pageQuery = graphql`
       content
       title
       date(formatString: "MMMM DD, YYYY")
+      acfMetaData {
+        metaTitle
+        metaDescription
+      }
 
       featuredImage {
         node {

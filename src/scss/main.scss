@@ -1,5 +1,9 @@
 @use "components/Header";
+@use "components/Footer";
 @use "components/PostCard";
+@use "components/Post";
+@use "components/Bio";
 @use "global/base";
 @use "global/bootstrap-grid";
 @use "global/normalize";
+@use "global/responsive-text";

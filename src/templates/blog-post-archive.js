@@ -31,10 +31,9 @@ const BlogIndex = ({
 
       <div className="container" style={{ padding: "4vw 0" }}>
         <div className="row">
-          {console.log(posts)}
-          {posts.map(post => {
+          {posts.map((post, index) => {
             return (
-              <div className="col-md-4 col-sm-12 post-card">
+              <div key={index} className="col-md-4 col-sm-12 post-card">
                 <Link className="post-card-link" to={post.uri}>
                   <img
                     className={"post-card-image"}
@@ -43,13 +42,15 @@ const BlogIndex = ({
                   />
                   <h2 className="post-card-title">{post.title}</h2>
                   <div className="post-card-excerpt">{parse(post.excerpt)}</div>
-                  <div class="post-card-author">
+                  <div className="post-card-author">
                     <img
-                      class="post-card-author_image"
+                      className="post-card-author_image"
                       src={post.author.node.avatar.url}
-                      alt="author image"
+                      alt="author"
                     />
-                    <p class="post-card-author_name">{post.author.node.name}</p>
+                    <p className="post-card-author_name">
+                      {post.author.node.name}
+                    </p>
                   </div>
                 </Link>
               </div>
