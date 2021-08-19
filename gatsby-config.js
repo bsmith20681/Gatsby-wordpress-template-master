@@ -13,6 +13,16 @@ module.exports = {
    * Gatsby has a rich ecosystem of plugins.
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
    */
+  siteMetadata: {
+    title: "Think Sous Vide",
+    titleTemplate: "%s | thinksousvide.com",
+    description:
+      "Reviews and guides for Finding the best home security system for you.",
+    siteUrl: "https://www.thinksousvide.com", // No trailing slash allowed!
+    image: "/images/your-home-security-expoert-logo.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: "",
+    authorName: "Ben Smith",
+  },
   plugins: [
     {
       /**
@@ -26,7 +36,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: `http://thinksousvidecom.local/graphql`,
+        url: `https://blog.thinksousvide.com/graphql`,
       },
     },
 
@@ -51,7 +61,13 @@ module.exports = {
      */
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-205382029-1",
+      },
+    },
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,

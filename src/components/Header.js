@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import Logo from "../images/thinksousvide-logo.png"
 
 const Header = props => {
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -11,14 +12,10 @@ const Header = props => {
       <div className="container">
         {/* Actual Menu*/}
         <nav>
-          <h3 style={{ margin: 0 }}>
-            {/*purposfully using <a> instead of <Link> because when hosted on netlify weird bug returns An unexpected error has occurred. only for "/" route */}
-            {
-              <Link className="nav-logo" to="/">
-                thinksousvide.com
-              </Link>
-            }
-          </h3>
+          <Link className="nav-logo" to="/">
+            <img src={Logo} alt="logo" />
+          </Link>
+
           <ul className={"nav-link-list " + (mobileMenu ? "open" : "")}>
             <li className="nav-link">
               <a
