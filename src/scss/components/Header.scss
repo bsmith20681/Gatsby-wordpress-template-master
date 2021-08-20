@@ -16,6 +16,10 @@ nav {
   &-logo {
     color: white;
     text-decoration: none;
+
+    & img {
+      margin: 0;
+    }
   }
 
   &-link {
@@ -34,6 +38,7 @@ nav {
     display: flex;
     list-style: none;
     margin-top: 10px;
+    margin-bottom: 0;
   }
 }
 
@@ -133,10 +138,18 @@ nav {
 }
 
 .header {
+  &-title {
+    text-align: center;
+    padding: 5vw 0px 12vw 0px;
+    color: white;
+    max-width: 750px;
+    margin: 0 auto;
+  }
   &-background {
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
+    background-size: cover;
+    background-position: top;
+    background-color: black;
   }
 }

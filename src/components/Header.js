@@ -38,7 +38,7 @@ const Header = props => {
                 className={mobileMenu ? "nav-text_black" : "nav-text_white"}
                 to="/"
               >
-                Submit a Font
+                How to Sous Vide
               </Link>
             </li>
           </ul>

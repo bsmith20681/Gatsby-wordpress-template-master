@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./Header"
 import Footer from "./Footer"
+import EmailSignUp from "./EmailSignUp"
 
 const Layout = ({ isHomePage, children }) => {
   return (
@@ -8,11 +9,10 @@ const Layout = ({ isHomePage, children }) => {
       <header className="global-header">
         {isHomePage ? (
           <div className="header-background">
-            <Header />{" "}
-            <div style={{ textAlign: "center", padding: "10vw 0" }}>
-              <h1>sign up for our newsletter</h1>
-              <input type="text" />
-              <button>submit</button>
+            <Header />
+            <div className="header-title">
+              <h1>Sous Vide tricks and tips sent to your inbox</h1>
+              <EmailSignUp />
             </div>
           </div>
         ) : (
