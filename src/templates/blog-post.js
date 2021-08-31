@@ -34,7 +34,11 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
             <div className="col-md-10 ">
               <header>
                 {featuredImage?.fluid && (
-                  <Image fluid={featuredImage.fluid} alt={featuredImage.alt} />
+                  <Image
+                    class="img-fluid"
+                    fluid={featuredImage.fluid}
+                    alt={featuredImage.alt}
+                  />
                 )}
               </header>
 
@@ -54,8 +58,6 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         </div>
 
         <hr />
-
-        <footer></footer>
       </article>
 
       {/*<nav className="blog-post-nav">

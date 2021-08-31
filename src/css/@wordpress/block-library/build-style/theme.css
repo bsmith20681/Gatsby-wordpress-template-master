@@ -225,3 +225,8 @@
 #end-resizable-editor-section {
   display: none;
 }
+
+span.inline-gatsby-image-wrapper {
+  height: auto !important;
+  width: 100% !important;
+}
