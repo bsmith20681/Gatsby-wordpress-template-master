@@ -37,10 +37,7 @@ const Bio = () => {
         )}
       </div>
       <div className="col-md-10">
-        <p>
-          About the Author
-          {author?.description || null}
-        </p>
+        <p>{author?.description || null}</p>
       </div>
     </div>
   )
