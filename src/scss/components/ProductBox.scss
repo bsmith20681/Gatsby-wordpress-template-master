@@ -13,12 +13,20 @@
 .product-box-title {
   font-size: 1.875rem;
   font-weight: 800;
-  color: #1d6f98;
+  color: #f29b30;
   text-decoration: none;
+}
+
+.product-box-prime {
+  margin: 10px 0 !important;
 }
 
 .product-box-description {
   color: #393e42;
+}
+
+.product-box-image {
+  min-width: 300px;
 }
 
 .product-box-button {
