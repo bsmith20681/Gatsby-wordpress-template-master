@@ -1,0 +1,44 @@
+/*********************************************************
+    AFFILIATE PRODUCT BOX CSS
+*********************************************************/
+.product-box {
+  border: 1px solid #e2e2e2;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1300px;
+}
+
+.product-box-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #1d6f98;
+  text-decoration: none;
+}
+
+.product-box-description {
+  color: #393e42;
+}
+
+.product-box-button {
+  color: white;
+  text-decoration: none;
+  background-color: #7bc47f;
+  padding: 10px 15px;
+  border-radius: 10px;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+@media only screen and (max-width: 765px) {
+  .product-box {
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .product-box-image {
+    order: -1;
+  }
+}
